@@ -6,11 +6,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: install python deps
-          command: pip install -U twine
-      - run:
-          name: setup project
-          command: python setup.py sdist
+          - virtualenv project
+          - source project/bin/activate
+          - pip install -U twine virtualenv
+          - python setup.py sdist
 #      - run:
 #          name: twine upload
 #          command: twine upload dist/*
