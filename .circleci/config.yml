@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  release-pypi:
+    docker:
+      - image: circleci/python:3.7
+    steps:
+      - checkout
+      - run:
+          name: install python deps
+          command: pip install -U twine
+      - run:
+          name: setup project
+          command: python setup.py sdist
+#      - run:
+#          name: twine upload
+#          command: twine upload dist/*
+
+workflows:
+  version: 2
+  release:
+    jobs:
+      - release-pypi:
+#          filters:
+#            tags:
+#              only: /^version-.*$/
