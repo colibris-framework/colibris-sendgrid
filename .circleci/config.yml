@@ -5,11 +5,10 @@ jobs:
       - image: circleci/python:3.7
     steps:
       - checkout
-      - run:
-          - virtualenv project
-          - source project/bin/activate
-          - pip install -U twine virtualenv
-          - python setup.py sdist
+      - run: virtualenv project
+      - run: source project/bin/activate
+      - run: pip install -U twine virtualenv
+      - run: python setup.py sdist
 #      - run:
 #          name: twine upload
 #          command: twine upload dist/*
