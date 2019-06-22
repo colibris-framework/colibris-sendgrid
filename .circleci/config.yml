@@ -11,6 +11,7 @@ jobs:
           source project/bin/activate
           pip install -U twine virtualenv
           python setup.py sdist
+          set
           twine upload dist/*
 
 workflows:
