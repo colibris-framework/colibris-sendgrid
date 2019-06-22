@@ -1,7 +1,6 @@
 version: 2
 jobs:
   release-pypi:
-    context: safefleet-global123
     docker:
       - image: circleci/python:3.7
     steps:
@@ -19,6 +18,7 @@ workflows:
   release:
     jobs:
       - release-pypi
+        - context: safefleet-global
 #          filters:
 #            tags:
 #              only: /^version-.*$/
