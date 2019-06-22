@@ -17,8 +17,8 @@ workflows:
   version: 2
   release:
     jobs:
-      - release-pypi
-        - context: safefleet-global
+      - release-pypi:
+          context: safefleet-global
 #          filters:
 #            tags:
 #              only: /^version-.*$/
