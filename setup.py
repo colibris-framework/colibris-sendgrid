@@ -30,8 +30,10 @@ setup(
         'aiohttp',
         'colibris'
     ],
-    url='http://gitlab.com/safefleet/colibris-sendgrid',
+    url='https://github.com/colibris-framework/colibris-sendgrid',
     license='BSD',
     description='SendGrid email backend for Colibris',
+    long_description=open('README.md').read(),
+    author='Calin Crisan',
     packages=['colibrissendgrid']
 )
