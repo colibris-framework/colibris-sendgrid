@@ -12,7 +12,6 @@ jobs:
           python setup.py sdist
           twine upload dist/*
 
-
 workflows:
   version: 2
   release:
@@ -22,3 +21,5 @@ workflows:
           filters:
             tags:
               only: /^version-.*$/
+            branches:
+              ignore: /.*/
