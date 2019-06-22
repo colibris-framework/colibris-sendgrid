@@ -1,6 +1,7 @@
 version: 2
 jobs:
   release-pypi:
+    context: safefleet-global
     docker:
       - image: circleci/python:3.7
     steps:
@@ -10,9 +11,7 @@ jobs:
           source project/bin/activate
           pip install -U twine virtualenv
           python setup.py sdist
-#      - run:
-#          name: twine upload
-#          command: twine upload dist/*
+          twine upload dist/*
 
 workflows:
   version: 2
