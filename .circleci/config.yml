@@ -10,7 +10,6 @@ jobs:
           source project/bin/activate
           pip install -U twine virtualenv
           python setup.py sdist
-          set
           twine upload dist/*
 
 workflows:
@@ -19,6 +18,6 @@ workflows:
     jobs:
       - release-pypi:
           context: safefleet-global
-#          filters:
-#            tags:
-#              only: /^version-.*$/
+          filters:
+            tags:
+              only: /^version-.*$/
