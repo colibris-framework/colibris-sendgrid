@@ -17,7 +17,7 @@ workflows:
   release:
     jobs:
       - release-pypi:
-          context: safefleet-global
+          context: colibris-global
           filters:
             tags:
               only: /^version-.*$/
